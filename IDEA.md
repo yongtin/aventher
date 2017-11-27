@@ -1,0 +1,2 @@
+- some deep learning / neural network exercise
+- google home api related, chat based

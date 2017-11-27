@@ -1,0 +1,24 @@
+package main
+
+import "fmt"
+import "github.com/stevenmiller888/go-mind"
+
+func main() {
+  m := mind.New(0.3, 10000, 3, "sigmoid")
+  m.Learn([][][]float64{
+    {{0, 0}, {0}},
+    {{0, 1}, {1}},
+    {{1, 0}, {1}},
+    {{1, 1}, {0}},
+    {{0, 1}, {1}},
+    {{1, 0}, {1}},
+    {{1, 1}, {0}},
+    {{0, 1}, {1}},
+  })
+
+  prediction := m.Predict([][]float64{
+    {0, 1},
+  })
+
+  fmt.Println(prediction.At(0, 0))
+}
